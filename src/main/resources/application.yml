@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: APIGATEWAY-SERVICE
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     gateway:
       default-filters:
@@ -98,7 +103,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans , httptrace
+        include: refresh, health, beans , httptrace, busrefresh
 
 #httptrace 사용하기 위해서는 ean 생성필요
 #token:
